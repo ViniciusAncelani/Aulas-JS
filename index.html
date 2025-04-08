@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Carossel de imagens </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <h1> Carrosel de imagens </h1>
+
+        <div class="Carrosel">
+            <div class='container' id="imagens">
+                <img src="Makima.jpg" alt="Imagem2" width="500px" height="380px">
+                <img src="Goku.jpg" alt="Imagem3" width="500px" height="380px">
+                <img src="timinho.jpeg" alt="Imagem1" width="500px" height="380px">
+            </div>
+        </div>
+
+    <div class="buttons">
+        <input type="radio" name="button" id="button1" class="button">
+        <input type="radio" name="button" id="button2" class="button">
+        <input type="radio" name="button" id="button3" class="button">
+    </div>
+
+    <footer> &copy; Vinicius Ancelani </footer>
+
+    <script>
+
+        let imagens = document.getElementById('imagens')
+        let buttons = document.querySelectorAll('.button')
+
+        function changeSlides() {
+            buttons.forEach((botoes, index) => {
+                botoes.addEventListener('click', () => {
+                    imagens.style.transform = `translateX(-${index * 500}px)`
+                    imagens.style.transition = 'transform 0.5 ease-in-out'
+                })
+            })
+        }
+
+        changeSlides()
+
+
+    </script>
+
+</body>
+
+</html>
